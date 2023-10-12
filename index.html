@@ -3,30 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/6285ccce72.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@400;700&family=Silkscreen&display=swap" rel="stylesheet">
     <title>Game Vault</title>
 </head>
 <body>
     <header>
         <div class="content">
             <div class="navbar">
-            <img src="assets/game-vault-low-resolution-logo-color-on-transparent-background.png" alt="logo" height="40" width="150">
-            <a href="index.html">Home</a>
-            <a href="/pages/games.html" target="_blank">Games</a>
-            <a href="/pages/login.html" target="_blank">Login</a>
-            <div class="search-bar">
-                <input type="text" placeholder="Search...">
-                <button type="submit">Search</button>
+                <a href="index.html"><img src="assets/game-vault-low-resolution-logo-color-on-transparent-background.png" alt="logo" height="40" width="150"></a>
+            
+                <div class="links">
+                    <a href="index.html">Home</a>
+                    <a href="/pages/games.html">Games</a>
+                    <a href="/pages/login.html">Login</a>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </div>
             </div>  
+            <div class="counter">0</div>
         </div>
     </header>
     <main>
         <div>
             <h1>Unleash Your Gaming Potential with Game Vault!</h1>
+        </div>
+        <div class="advantages-section">
+            <div class="advantages-scroll-container"></div>
+                <div class="advantages-list">
+                    <div class="advantage">
+                        <i class="fa-solid fa-percent "></i>
+                        <h3>Discounts All Year Round</h3>
+                    </div>
+                    <div class="advantage">
+                        <i class="fa-solid fa-headset"></i>
+                        <h3>24/7 Support</h3>
+                    </div>
+                    <div class="advantage">
+                        <i class="fas fa-users"></i>
+                        <h3>Active Community</h3>
+                    </div>
+                    <div class="advantage">
+                        <i class="fa-solid fa-heart"></i>
+                        <h3>We Love Games</h3>
+                    </div>
+                </div> 
+            </div> 
+        </div>
+        <div class="bestsellers-header">
+            <h2>Bestsellers</h2>
+        </div>
+        <div class="product-section">
+            <div class="product-card">
+                <img src="assets/WallWorld.jpg" alt="WallWorld">
+                <h2>Wall World</h2>
+                <p>$29.99</p>
+                <button class="purchase-button">Purchase</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/Kovaks.jpg" alt="Game 2">
+                <h2>Kovaks</h2>
+                <p>$39.99</p>
+                <button class="purchase-button">Purchase</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/Neceese.jpg" alt="Game 3">
+                <h2>Necesse</h2>
+                <p>$24.99</p>
+                <button class="purchase-button">Purchase</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/NovaStrike.jpg" alt="Game 4">
+                <h2>Nova Strike</h2>
+                <p>$49.99</p>
+                <button class="purchase-button">Purchase</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/Sclash.jpg" alt="Game 5">
+                <h2>Sclash</h2>
+                <p>$19.99</p>
+                <button class="purchase-button">Purchase</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/City of beats.jpg" alt="Game 6">
+                <h2>City of beats</h2>
+                <p>$59.99</p>
+                <button class="purchase-button">Purchase</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/Stellaris-Galaxy-Edition.jpg" alt="Game 4">
+                <h2>Stellaris</h2>
+                <p>$49.99</p>
+                <button class="purchase-button">Purchase</button>
+            </div>
+            <div class="product-card">
+                <img src="assets/Mortal-Shell.jpg" alt="Game 2">
+                <h2>Mortal Shell</h2>
+                <p>$39.99</p>
+                <button class="purchase-button">Purchase</button>
+            </div>
+        </div>
+        <div class="see-more-button-container">
+            <a class="see-more-button" href="pages/games.html">See More</a>
+        </div>
+        <div class="bestsellers-header">
+            <h2>Reviews</h2>
+        </div>
+        <div class="review-section">
+            <div class="review-card">
+                <h3 class="review-name"></h3>
+                <p class="review-content"></p>
+            </div>
+            <div class="review-card">
+                <h3 class="review-name"></h3>
+                <p class="review-content"></p>
+            </div>
+            <div class="review-card">
+                <h3 class="review-name"></h3>
+                <p class="review-content"></p>
+            </div>
         </div>
     </main>
 
@@ -37,9 +141,9 @@
             <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
             <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
         </div>  
-        <p>&copy; 2023 Gaming Website</p>        
+        <p>&copy; 2023 Game Vault</p>        
     </footer> 
-
+    <script src="index.js"></script>
 </body>
 </html>
 

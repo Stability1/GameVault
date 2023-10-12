@@ -1,3 +1,5 @@
+
+/* General Styles */
 html, body {
     height: 100%;
     margin: 0;
@@ -15,7 +17,7 @@ body {
 header {
     box-sizing: border-box;
     width: 100%;
-    height: 200px;
+    max-height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,11 +43,23 @@ header {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     align-content: center;
 }
 
+.links {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+
+.active {
+    text-decoration: underline;
+}
+
+/* Search bar */
 .search-bar {
     display: flex;
     align-items: center;
@@ -66,14 +80,6 @@ header {
     outline: none;
 }
 
-.search-bar button {
-    padding: 5px 10px;
-    border: none;
-    background-color: #09BC8A;
-    color: white;
-    border-radius: 20px;
-    cursor: pointer;
-}
 
 .search-bar button {
     padding: 8px 15px;
@@ -92,12 +98,38 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Left top corner counter */
+.counter {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #09BC8A;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    z-index: 1; 
+    transition: background-color 0.3s ease;
+}
+
+.counter.animated {
+    animation: pulse 0.3s;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+/* General styles */
 h1 {
 
     font-weight: 400;
     font-family: "Silkscreen", sans-serif;
     color: white;
-    background: linear-gradient(45deg, #004346 0%, #172A3A 100%);
     font-size: 80px;
     line-height: 1.1;
     text-align: center;
@@ -114,8 +146,347 @@ a {
 a:hover {
     color: #09BC8A;
     text-decoration: underline;
+    transition: color 0.4s ease;
 }
 
+/* Styling for the advantages section */
+.advantages-section {
+    text-align: center;
+    padding: 40px 0;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    overflow: hidden;
+}
+
+.advantages-list {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto; 
+    padding: 20px 0;
+}
+
+@media (max-width: 1424px) {
+    .advantages-list {
+        justify-content: flex-start; 
+    }
+}
+
+.advantage {
+    flex: 0 0 auto;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    margin: 0 10px;
+    
+}
+
+
+.advantage i {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #09BC8A;
+}
+
+/* Spinning animation for icons */
+.spinning {
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.advantage h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.advantage p {
+    font-size: 16px;
+}
+
+/* Scrollbar customization */
+.advantages-list::-webkit-scrollbar {
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.advantages-list::-webkit-scrollbar-thumb {
+    background-color: #09BC8A;
+    border-radius: 5px;
+}
+
+.advantages-list:hover::-webkit-scrollbar {
+    display: block; 
+}
+
+
+/* Product Section Header */
+.bestsellers-header {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.bestsellers-header h2 {
+    margin-top: 50px;
+    color: white;
+    font-family: "Silkscreen", sans-serif;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+/* Product Section */
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px 0;
+    padding: 0 10px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background-color: #092F46;
+    border-radius: 10px;
+    border: solid 2px #01151F;
+    margin: 10px;
+    width: calc(25% - 20px); 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    position: relative;
+    
+}
+
+.product-card .purchase-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    padding: 10px 20px;
+    background-color: #09BC8A; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Silkscreen", sans-serif;
+    font-size: 16px;
+}
+
+.product-card.hovered {
+    transform: scale(1.05); 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.product-card.hovered .purchase-button {
+    opacity: 1;
+}
+
+.product-card .purchase-button:hover {
+    transform: translate(-50%, -51%); 
+    background-color: rgba(9, 188, 138, 0.9); 
+}
+
+.product-card .purchase-button:active {
+    transform: translate(-50%, -49%); 
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: filter 0.2s ease;
+}
+
+
+
+.product-card.hovered img {
+    filter: brightness(0.5); 
+}
+
+.product-card h2 {
+    color: #fff;
+    font-size: 24px;
+    margin: 10px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Silkscreen", sans-serif;
+}
+
+.product-card p {
+    font-size: 18px;
+    color: #09BC8A;
+    font-weight: bold;
+}
+/* See More button */
+.see-more-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.see-more-button-container a{
+    text-decoration: none;
+    color: white;
+}
+
+.see-more-button {
+    display: block;
+    width: 150px;
+    padding: 10px 20px;
+    background-color: #09BC8A;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-family: "Silkscreen", sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+
+.see-more-button:hover {
+    background-color: #07956D;
+}
+
+/* Review Section */
+.review-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    color: white;
+    margin-bottom: 60px;
+}
+
+.review-card {
+    background-color: #111;
+    border-radius: 10px;
+    padding: 30px;
+    flex: 0 0 calc(33.33% - 40px);
+    box-sizing: border-box;
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    border: 2px solid #09BC8A;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; 
+    text-align: center;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
+}
+
+.review-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #09BC8A; 
+}
+
+.review-card p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #ccc;
+    position: relative;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+
+
+@media (max-width: 767px) {
+    .review-card {
+        flex: 0 0 90%;
+    }
+}
+
+/* LOGIN page */
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 200px); 
+}
+
+.login-form {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.login-form h2 {
+    color: white;
+    font-family: "Silkscreen", sans-serif;
+    margin-bottom: 20px;
+}
+
+.login-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-form .helpers {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-form .helpers a {
+    font-size: 16px;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+
+.login-form .helpers a:hover {
+    color: #f30c0c;
+}
+
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #09BC8A;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: "Silkscreen", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #07956D;
+}
+
+/* Footer */
 .site-footer {
     background: linear-gradient(45deg, #040505 0%, #000305 100%);
     color:white;
@@ -125,6 +496,7 @@ a:hover {
   }
 
 main {
+    background: linear-gradient(45deg, #004346 0%, #172A3A 100%);
    flex: 1;
 }
 
@@ -139,4 +511,118 @@ main {
     font-size: 24px;
     margin-right: 10px;
 }
-  
+
+/* Games Page */
+.games-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.categories-sidebar {
+    width: 25%;
+    background-color: #092F46;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    font-family: "Silkscreen", sans-serif;;
+}
+
+.categories-sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.categories-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categories-sidebar li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.categories-sidebar li:hover {
+    color: #09BC8A;
+}
+
+.games-section {
+    width: 75%;
+}
+
+.games-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+@media (max-width: 600px) {
+    
+    header {
+        padding: 50px 20px;
+        max-height: 250px;
+    }
+
+    .categories-sidebar h2 {
+        font-size: 12px;
+        margin-bottom: 7px;
+    }
+    
+    .categories-sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .categories-sidebar li {
+        font-size: 9px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+    
+
+    .links {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+    
+   
+    .product-card {
+        width: calc(50% - 20px);
+    }
+
+    
+    h1 {
+        font-size: 36px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    header {
+        max-height: 300px;
+    }
+    
+    .navbar {
+        flex-direction: column;
+    }
+    .links {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .navbar > {
+        margin-top: 15px;
+    }
+    .product-card {
+        width: calc(33.33% - 20px);
+    }
+}
